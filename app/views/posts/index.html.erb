@@ -1,0 +1,14 @@
+<div class="col-md-4">
+  <h1>Posts#index</h1>
+
+  <% @posts.each do |post| %>
+    
+    <article>
+      <h1> <%= link_to post.title, post  %> </h1>
+      <small>Comments: <%= pluralize(post.comments.length, 'comment', 'comments') %></small>
+
+      <p><%= post.content %></p>
+    </article>
+  <% end %>
+
+</div>

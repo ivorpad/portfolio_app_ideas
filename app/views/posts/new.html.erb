@@ -1,0 +1,14 @@
+<div class="col-md-4">
+
+<h1>New Posts</h1>
+
+<%= form_for @post, html: { class: "form-group" } do |f| %>
+    Title: <%= f.text_field :title, class: 'form-control' %>
+    <br>
+    Content: <%= f.text_area :content, class: 'form-control' %>
+    <br>
+    <%= f.submit "Submit", class: 'btn btn-primary' %>
+<% end %>
+  
+
+</div>

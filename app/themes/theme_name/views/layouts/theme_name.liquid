@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Theme Name </title>
+  {{ 'theme_name/all' | javascript_include_tag }}
+  {{ 'theme_name/all' | stylesheet_link_tag }}
+  {% csrf_meta_tags %}
+</head>
+<body>
+
+  <h1>Fuckety</h1>
+
+{{ content_for_layout }}
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<div class="col-md-4">
+<h1>Posts</h1>
+
+<h3><%= @post.title %></h3>
+
+<p> <%= @post.content %></p>
+
+
+<div class="comments">
+  <h5><%= pluralize(@post.comments.count, 'Comment', 'Comments') %></h5>
+<% if !@post.comments.empty? %>
+  <ul>
+    <% @post.comments.each do |comment| %>
+      <li> <%= comment.body %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+  <form>
+    <textarea rows="5" class="form-control"></textarea>
+    <br>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+</div>

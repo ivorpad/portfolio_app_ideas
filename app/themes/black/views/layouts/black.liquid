@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Black</title>
+  {{ 'black/all' | asset_path | javascript_include_tag }}
+  {{ 'black/all' | stylesheet_link_tag }}
+  {% csrf_meta_tags %}
+</head>
+<body>
+
+  <div class="hello">
+    <h1 style="color: white;"> Hello !!</h1>
+  </div>
+
+{{ content_for_layout }}
+
+</body>
+</html>
