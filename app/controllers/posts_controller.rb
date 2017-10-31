@@ -15,15 +15,16 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.comments.new
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.new(post_params)
 
     if @post.save
       redirect_to post_path(@post)
     else
-      flash[:error] = "Invalid post attributes"
+      flash[:error] = @post.errors.full_messages
       render :new
     end
   end
