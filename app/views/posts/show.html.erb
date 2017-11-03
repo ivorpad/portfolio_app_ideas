@@ -2,9 +2,9 @@
 <h1>Posts</h1>
 
 <h3><%= @post.title %></h3>
+<small>Member: <%= @post.member.title.capitalize unless @post.member.nil? %></small>
 
 <p> <%= @post.content %></p>
-
 
 <div class="comments">
   <h5><%= pluralize(@post.comments.count, 'Comment', 'Comments') %></h5>
@@ -20,5 +20,6 @@
 
 </div>
 </div>
+
 
 <%= console %>

@@ -6,6 +6,12 @@
     Title: <%= f.text_field :title, class: 'form-control' %>
     <br>
     Content: <%= f.text_area :content, class: 'form-control' %>
+
+    <%= label_tag 'Member' %>
+    <%= f.fields_for :member, @post.member do |member_form| %>
+        <%= member_form.text_field :title, class: 'form-control' %>
+    <% end %>
+
     <br>
     <%= f.submit "Submit", class: 'btn btn-primary' %>
 <% end %>

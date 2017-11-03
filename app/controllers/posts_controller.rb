@@ -15,12 +15,12 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.comments.new
+    @post.build_member
   end
 
   def create
-    @post = current_user.posts.new(post_params)
-
+    @post = current_user.posts.create(post_params)
+    @post.create_member(post_params[:member_attributes])
     if @post.save
       redirect_to post_path(@post)
     else
@@ -35,6 +35,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :member_id, member_attributes: [:title])
   end
 end
